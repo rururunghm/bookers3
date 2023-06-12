@@ -13,4 +13,7 @@ class User < ApplicationRecord
     end
     profile_image.variant(resize_to_limit: [100, 100]).processed
   end
+  
+  has_many :books, dependent: :destroy
+  
 end
