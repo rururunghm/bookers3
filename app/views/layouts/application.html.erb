@@ -23,34 +23,42 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" >
       
     <% if user_signed_in? %>
-      <li class="nav-item">
-          <%= link_to 'Home', user_path(current_user.id),class: 'nav-link text-white' %>
+      <li class="nav-item text-white">
+          <%= link_to 'Home', user_path(current_user.id), class: 'nav-link text-white' %>
+          <i class="fas fa-home" aria-hidden="true"></i>
       </li>
-      <li>
+      <li class="nav-item text-white">
           <%= link_to 'User', users_path,class: 'nav-link text-white' %>
+          <i class="fas fa-user" aria-hidden="true"></i>
       </li>
-      <li>
+      <li class="nav-item text-white">
           <%= link_to 'Books', books_path ,class: 'nav-link text-white'%>
+          <i class="fas fa-book-open" aria-hidden="true"></i>
       </li>
-      <li>
+      <li class="nav-item text-white">
           <%= link_to 'Log out', destroy_user_session_path, method: :delete,class: 'nav-link text-white' %>
+          <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
       </li>
     <% else %>
-      <li>
+      <li class="nav-item text-white">
           <%= link_to 'Home', root_path,class: 'nav-link text-white' %>
+          <i class="fas fa-home" aria-hidden="true"></i>
       </li>
-      <li>
+      <li class="nav-item text-white">
           <%= link_to 'About', about_path,class: 'nav-link text-white' %>
+          <i class="fas fa-home" aria-hidden="true"></i>
       </li>
     
-      <li>
+      <li class="nav-item text-white">
            <%= link_to "Sign up", new_user_registration_path ,class: 'nav-link text-white'%>
+           <i class="fas fa-home" aria-hidden="true"></i>
       </li>
-      <li>
-           <%= link_to "Log in", new_user_session_path ,class: 'nav-link text-white'%>
+      <li class="nav-item text-white">
+          <%= link_to "Log in", new_user_session_path ,class: 'nav-link text-white'%>
+          <i class="fas fa-home" aria-hidden="true"></i>
       </li>
     <% end %>
       </ul>
