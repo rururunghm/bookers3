@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    Book.find(params[:id])
   end
 
   def update
