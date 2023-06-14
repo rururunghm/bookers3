@@ -5,10 +5,10 @@
 
 
 
-<% @post_images.each do |post_image| %>
+<% @book.each do |book| %>
 <div>
   <%= link_to book_path(book.id) do %>
-    <%= image_tag book.get_image %>
+    <%= image_tag book.get_profile_image %>
   <% end %>
   <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
   <p>ショップ名：<%= book.shop_name %></p>
