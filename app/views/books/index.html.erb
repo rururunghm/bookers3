@@ -65,7 +65,13 @@
               <td></td>
               <td><%= link_to book.title, book_path(book.id) %></td>
               <td><%= book.body %></td>
+              <td><%= link_to "Edit" , edit_user_path(@user.id), class: "btn btn-sm btn-success" %></td>
+              <td>
+                  <%= link_to "Destroy", books_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-sm btn-danger" %>
+                  
+              </td>
             </tr>
+            
              <% end %>
           </tbody>
         </table>
