@@ -1,4 +1,16 @@
 <p id ="notice"></p>
+<div id="error_explanation">
+    <% if @book.errors.any? %>
+    <h3><%= @book.errors.count %>errors prohibited this obj from being saved:</h3>
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+    <% end %>
+</div>
+
+
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
@@ -25,25 +37,23 @@
 
  <h2>New Book</h2>
         <%= form_with model: @book, url: '/books', method: :post do |f| %>
-        
-        <form action="/books" accept-charset="UTF-8" method="post">
-          <input type="hidden" name="authenticity_token" autocomplete="off">
+          
           
           <div class="group">
             <label form ="book_title">Title</label>
-            <input class="form-control book_title" type="text" name="book[title]" id="book_title">
+            <%= f.text_field :title , class: "form-control book_title" %>
           </div>
           
           <div class="group">
             <label for ="book_body">Opinion</label>
-            <textarea class="form-control book_body" type="text" name="book[body]" id="book_body"></textarea>
+            <%= f.text_area :body, class: "form-control book_body" %>
           </div>
 
           <div class="group">
-            <input type="submit" name="commit" value="Create Book" class="actions btn btn-sm btn-success" date-disable-with="Create Book">
+            <%= f.submit 'Create Book' ,class: "actions btn btn-sm btn-success" %>
           </div>
 
-          </form>
+          
         <% end %>
         </div>
   
