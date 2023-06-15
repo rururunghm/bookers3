@@ -1,6 +1,5 @@
-<div>
-  <%= flash[:notice] %>
-</div>
+<p id ="notice"></p>
+
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
@@ -16,7 +15,7 @@
               </tr>
               <tr>
               <th>introduction</th>
-              <th></th>
+              <th><%= @user.introduction %></th>
               </tr>
             </tbody>
           </table>
