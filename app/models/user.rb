@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :books, dependent: :destroy
   
-  validates :name, length: { minimum: 2, maximum: 20 }, presence: true
+  validates :name, presence: true
   validates :introduction, presence: true
   validates :profile_image, presence: true
   
