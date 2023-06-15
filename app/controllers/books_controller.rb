@@ -32,7 +32,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    
+    @user = current_user
+    @b_user = User.find(@book.user[:id])
   end
   
   private
