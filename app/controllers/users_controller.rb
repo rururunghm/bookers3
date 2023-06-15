@@ -1,13 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @user = User.all
-  end
-  
-  def create
-    @user = User.index
-    @user.user_id = current_user.id
-    @user.save
-    redirect_to user_path
+    @users = User.all
+    @user = current_user
   end
 
   def edit
