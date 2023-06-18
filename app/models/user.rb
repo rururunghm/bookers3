@@ -4,8 +4,8 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   
   
-  validates :name ,length: { minimum: 2, maximum: 20 }
-  
+  validates :name ,length: { minimum: 2, maximum: 20 }, uniqueness: true
+  validates :introduction, length: { maximum: 50 }
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
